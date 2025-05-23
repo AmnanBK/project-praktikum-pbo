@@ -8,9 +8,13 @@
  * @author amnan
  */
 import view.DashboardView;
+import controller.DashboardController;
 
 public class MainApp {
     public static void main(String[] args) {
-        javax.swing.SwingUtilities.invokeLater(DashboardView::new);
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            DashboardView view = new DashboardView();
+            new DashboardController(view);
+        });
     }
 }
